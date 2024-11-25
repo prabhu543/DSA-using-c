@@ -14,14 +14,13 @@ int* getConcatenation(int* nums, int numsSize, int* returnSize) {
 }
 
 int main() {
-    int nums[] = {1, 2, 3,1};
+    int nums[] = {1, 2, 3};
     int numsSize = sizeof(nums) / sizeof(nums[0]);
     int returnSize;
 
     int* result = getConcatenation(nums, numsSize, &returnSize);
 
-    for (int i = 0; i < returnSize; i++)
+   for (int i = 0; i < returnSize; i++)
             printf("%d ", result[i]);
-
-    free(result);
+    free(result); // Free allocated memory
 }
