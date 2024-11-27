@@ -1,5 +1,6 @@
 
 #include <stdio.h>
+
 int countDigits(int num) {
     int count = 0;
     int n = num;
