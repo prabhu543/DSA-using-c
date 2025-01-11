@@ -1,31 +1,28 @@
-//question number = 3300 
 #include <stdio.h>
 #include <limits.h>
 
 int minElement(int* nums, int numsSize) {
-    int minimum = INT_MAX;
-    for(int i = 0;i<numsSize ; i++)
+    int minElem = INT_MAX;
+    
+    for(int i = 0;i<numsSize;i++)
     {
-        int sum = 0;
-        while(nums[i]> 0)
+        int sum =0;
+        int num = nums[i];
+        while(num > 0)
         {
-            int rem = nums[i] % 10;
-            nums[i] = nums[i] / 10;
+            int rem = num % 10;
             sum += rem;
+            num = num /10;
         }
-        nums[i] = sum;
-        
-        if(nums[i] < minimum)
-            minimum = nums[i];
+        if(minElem > sum) minElem = sum;
     }
-    return minimum;
+    
+    return minElem;
 }
-
 int main()
 {
-    int array[] = {999,19,199};
-    int n = 3;
-    int result = minElement(array,n);
+    int array[] = {1,2,3,4 } ;
+    int n = sizeof(array) / sizeof(array[0]);
     
-    printf("%d",result);
+    printf("\n%d",minElement(array,n));
 }
